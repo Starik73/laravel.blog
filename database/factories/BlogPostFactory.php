@@ -26,7 +26,8 @@ class BlogPostFactory extends Factory
         $txt = $this->faker->realText(rand(1000,4000));
         $isPublished = rand(1,5) > 1;
         $createdAt = $this->faker->dateTimeBetween('-3 months', '-2 months');
-        $data = [
+
+        return [
             'category_id' => rand(1, 11),
             'user_id' => (rand(1, 5) == 5) ? 1 : 2,
             'title' => $title,
@@ -39,6 +40,5 @@ class BlogPostFactory extends Factory
             'created_at' => $createdAt,
             'updated_at' => $createdAt,
         ];
-        return $data;
     }
 }
