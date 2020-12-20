@@ -62,7 +62,7 @@ class CategoryController extends BaseController
         $item = BlogCategory::findOrFail($id);
         $categoryList = BlogCategory::all();
 
-        return view('blog.admin.category.edit', compact('item', 'categoryList'));
+        return view('blog.admin.categories.edit', compact('item', 'categoryList'));
     }
 
     /**
@@ -74,7 +74,42 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        dd(__METHOD__, $request->all(), $id);
+        $item = BlogCategory::find($id);
+        if (empty($item)){
+            return back()
+                ->withErrors(['msg' => "Запись ID = [{$id}] не найдена"])
+                ->withInput();
+        }
+
+        $data = $request->input();
+
+        if ($request->hasFile('img')) {
+            $extensions= ['jpg', 'png', 'PNG', 'JPG', 'jpeg', 'JPEG'];
+            if (in_array($request->file('img')->getClientOriginalExtension(), $extensions)) {
+                $destinationPath = 'uploads/img/categories';
+                $file = $request->file('img');
+                $file_name = 'category' . $id . 'logo.' . $file->getClientOriginalExtension();
+                $file->move($destinationPath , $file_name);
+                $data['img'] =  $file_name;
+            } else {
+                return back()
+                    ->withErrors(['msg' => 'Расширение логотипа не поддерживается, допустимые форматы: jpg, jpeg, png.'])
+                    ->withInput();
+            }
+        }
+
+        $result = $item
+            ->fill($data)
+            ->save();
+        if ($result){
+            return redirect()
+                ->route('blog.admin.categories.edit', $item->id)
+                ->with(['success' => 'Успешно сохранено']);
+        } else {
+            return back()
+                ->withErrors(['msg' => 'Ошибка сохранения'])
+                ->withInput();
+        }
     }
 
     /**
