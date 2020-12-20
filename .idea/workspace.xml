@@ -111,7 +111,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/blog/admin/categories" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -123,6 +123,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSp\OSPanel\domains\blog.laravel\resources\views\blog\admin\categories" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSp\OSPanel\domains\blog.laravel\app\Models" />
     </key>
@@ -143,7 +146,7 @@
       <updated>1608218813840</updated>
       <workItem from="1608218814871" duration="5027000" />
       <workItem from="1608233408682" duration="1197000" />
-      <workItem from="1608234852818" duration="17461000" />
+      <workItem from="1608234852818" duration="28408000" />
     </task>
     <servers />
   </component>
@@ -151,10 +154,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608321328440">
+    <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608375699528">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1608321328440" />
+    <state x="502" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1608375699528" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608457792392">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1608457792392" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1608312706494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -171,6 +178,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608312706494" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1608457838944">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1608457838944" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1608313448961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestTestController;
+//use App\Http\Controllers\Blog\PostController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -27,6 +28,27 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('/rest', RestTestController::class)->names('restTest');
+//Route::resource('rest', RestTestController::class)->names('restTest');
+
+Route::group(['namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], function()
+{
+    Route::resource('posts', 'PostController')->names('blog.posts');
+});
+
+//Админка Блога
+$groupData = [
+    'namespace' => 'App\Http\Controllers\Blog\Admin',
+    'prefix' => 'admin/blog',
+] ;
+
+Route::group($groupData, function()
+{
+    // BlogCategory
+    $methods = ['index','edit', 'store','update', 'create'];
+        Route::resource('categories', 'CategoryController')
+            ->only($methods)
+            ->names('blog.admin.categories');
+});
+
