@@ -46,17 +46,24 @@
               rows="3">{{ old('descriptoin', $item->description) }}</textarea>
 </div>
 <div class="form-group">
-    <label for="img">Логотип Category</label>
-    @if(!empty($item->img))
-        <img src="/public/uploads/img/categories/{{$item->img}}" alt="Логотип" style="width: 100px">
-    @else
-        <img class="img-thumbnail" src="/public/uploads/img/nophoto.png" alt="Логотип" style="width: 100px">
-    @endif
-    <input name="img"
-           value="{{ $item->img }}"
-           type="file"
-           class="form-control-file"
-           data-buttonText="Upload Logo"
-           data-size="sm"
-           id="img">
+    <div class="row">
+        <div class="col-md-2">
+            @if(!empty($item->img))
+                <img src="/public/uploads/img/categories/{{$item->img}}" alt="Логотип" style="width: 100px">
+            @else
+                <img class="img-thumbnail" src="/public/uploads/img/nophoto.png" alt="Логотип" style="width: 100px">
+            @endif
+        </div>
+        <div class="col-md-10">
+            <label for="img">Логотип Category</label>
+            <input name="img"
+                   value="image"
+                   accept="image/*"
+                   type="file"
+                   class="form-control-file"
+                   data-buttonText="Upload Logo"
+                   data-size="sm"
+                   id="img">
+        </div>
+    </div>
 </div>

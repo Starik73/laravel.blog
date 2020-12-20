@@ -27,11 +27,13 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>
+                                <a href="{{ route('blog.admin.categories.edit', $item->id) }}">
                                 @if(!empty($item->img))
                                     <img src="/public/uploads/img/categories/{{$item->img}}" alt="Логотип" style="width: 100px">
                                 @else
                                     <img class="img-thumbnail" src="/public/uploads/img/nophoto.png" alt="Логотип" style="width: 100px">
                                 @endif
+                                </a>
                             </td>
                             <td><a href="{{ route('blog.admin.categories.edit', $item->id) }}"> {{ $item->title }} </a>
                             </td>
