@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
-use App\Http\Controllers\Blog\BaseController;
+
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class CategoryController extends BaseController
      */
     public function index()
     {
-        $items = BlogCategory::all();
+        $items = BlogCategory::paginate(6);
         return view('blog.admin.categories.index', compact('items'));
     }
 
@@ -26,7 +26,7 @@ class CategoryController extends BaseController
      */
     public function create()
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
@@ -37,7 +37,7 @@ class CategoryController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
@@ -48,7 +48,7 @@ class CategoryController extends BaseController
      */
     public function show($id)
     {
-        //
+        dd(__METHOD__);
     }
 
     /**
@@ -59,7 +59,10 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        //
+        $item = BlogCategory::findOrFail($id);
+        $categoryList = BlogCategory::all();
+
+        return view('blog.admin.category.edit', compact('item', 'categoryList'));
     }
 
     /**
@@ -71,7 +74,7 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        dd(__METHOD__, $request->all(), $id);
     }
 
     /**
@@ -82,6 +85,6 @@ class CategoryController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        dd(__METHOD__);
     }
 }
