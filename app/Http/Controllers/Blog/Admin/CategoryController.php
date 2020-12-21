@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Blog\Admin;
 
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
+use App\Http\Requests\BlogCategoryUpdateRequest;
 
 class CategoryController extends BaseController
 {
@@ -72,19 +73,17 @@ class CategoryController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BlogCategoryUpdateRequest $request, $id)
     {
-        $rules = [
-            'title' => ['required', 'min:5', 'max:200'],
-            'slug' => ['max:200'],
-            'description' => ['string', 'max:200', 'min:3'],
-            'parent_id' => ['required', 'integer', 'exists:blog.categories,id'],
-            'img' => ['string', 'max:50'],
-        ];
+//        $rules = [
+//            'title' => ['required', 'min:5', 'max:200'],
+//            'slug' => ['max:200'],
+//            'description' => ['string', 'max:200', 'min:3'],
+//            'parent_id' => ['required', 'integer', 'exists:blog_categories,id'],
+//            'img' => ['string', 'max:50'],
+//        ];
 
-        $validateData = $request->validate($rules);
-
-        dd($validateData);
+        $data = $request->input();
 
         $item = BlogCategory::find($id);
 
@@ -93,8 +92,6 @@ class CategoryController extends BaseController
                 ->withErrors(['msg' => "Запись ID = [{$id}] не найдена"])
                 ->withInput();
         }
-
-        $data = $request->input();
 
         if ($request->hasFile('img')) {
             $extensions= ['jpg', 'png', 'PNG', 'JPG', 'jpeg', 'JPEG'];
@@ -114,6 +111,7 @@ class CategoryController extends BaseController
         $result = $item
             ->fill($data)
             ->save();
+
         if ($result){
             return redirect()
                 ->route('blog.admin.categories.edit', $item->id)
