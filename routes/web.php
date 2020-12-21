@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestTestController;
-//use App\Http\Controllers\Blog\PostController;
+use App\Http\Controllers\Blog\PostController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -30,7 +30,7 @@ Auth::routes();
 
 Route::get('home', [HomeController::class, 'index'])->name('home');
 
-//Route::resource('rest', RestTestController::class)->names('restTest');
+Route::resource('rest', RestTestController::class)->names('restTest');
 
 Route::group(['namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], function()
 {
