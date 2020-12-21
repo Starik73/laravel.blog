@@ -24,7 +24,7 @@
                class="form-control"
                id="deleted_at">
     </div>
-    <div class="form-group py-2">
-        <button type="submit" class="btn btn-danger">Сохранить</button>
-    </div>
 @endif
+<div class="form-group py-2">
+    <button type="submit" class="btn btn-danger">Сохранить</button>
+</div>

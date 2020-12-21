@@ -33,8 +33,7 @@
             <input name="slug" value="{{ $item->slug }}"
                    class="form-control"
                    id="slug"
-                   type="text"
-                   required>
+                   type="text">
         </div>
     </div>
 </div>

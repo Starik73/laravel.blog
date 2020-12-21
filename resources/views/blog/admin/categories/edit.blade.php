@@ -9,8 +9,15 @@
         <div class="my-2">
             <h2 class="text-dark">Наименование: <span class="text-info">#{{ $item->id }} {{ $item->title }}</span></h2>
         </div>
-        <form method="POST" enctype="multipart/form-data" action="{{ route('blog.admin.categories.update', $item->id) }}" class="p-2">
-            @method('PATCH')
+        @if($item->exists)
+            <form method="POST" enctype="multipart/form-data"
+            action="{{ route('blog.admin.categories.update', $item->id) }}" class="p-2">
+        @method('PATCH')
+        @else
+            <form method="POST" enctype="multipart/form-data"
+            action="{{ route('blog.admin.categories.store') }}" class="p-2">
+        @endif
+
             @csrf
             @php
                 /** @var \Illuminate\Support\ViewErrorBag $errors */

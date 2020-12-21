@@ -19,14 +19,14 @@ class BlogCategoriesTableSeeder extends Seeder
         $categories[] = [
             'title' => $cName,
             'description' => 'Description',
-            'parent_id' => 0,
+            'parent_id' => 1,
             'slug' => $cName,
         ];
 
         for ($i = 1; $i <= 10; $i++) {
-            $cName = 'Category' . $i;
+            $cName = 'Category' . ($i+1);
             $parentId = ($i > 4) ? rand(1 , 4) : 1;
-            $description = 'Description'. $i;
+            $description = 'Description'. ($i+1);
 
             $categories[] = [
                 'title' => $cName,
