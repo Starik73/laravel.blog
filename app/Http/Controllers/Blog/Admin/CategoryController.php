@@ -74,7 +74,20 @@ class CategoryController extends BaseController
      */
     public function update(Request $request, $id)
     {
+        $rules = [
+            'title' => ['required', 'min:5', 'max:200'],
+            'slug' => ['max:200'],
+            'description' => ['string', 'max:200', 'min:3'],
+            'parent_id' => ['required', 'integer', 'exists:blog.categories,id'],
+            'img' => ['string', 'max:50'],
+        ];
+
+        $validateData = $request->validate($rules);
+
+        dd($validateData);
+
         $item = BlogCategory::find($id);
+
         if (empty($item)){
             return back()
                 ->withErrors(['msg' => "Запись ID = [{$id}] не найдена"])
