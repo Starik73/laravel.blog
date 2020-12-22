@@ -22,7 +22,7 @@
                         <td>Родитель</td>
                     </tr>
                     </thead>
-                    @foreach($items as $item)
+                    @foreach($paginator as $item)
                         @php /** @var App\Models\BlogCategory $item */ @endphp
                         <tr>
                             <td>{{ $item->id }}</td>
@@ -41,9 +41,9 @@
                         </tr>
                     @endforeach
                 </table>
-                @if( $items->total() > $items->count() )
+                @if( $paginator->total() > $paginator->count() )
                 <p>
-                    {{ $items->links() }}
+                    {{ $paginator->links() }}
                 </p>
                     @endif
             </div>

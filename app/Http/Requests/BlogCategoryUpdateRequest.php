@@ -28,7 +28,6 @@ class BlogCategoryUpdateRequest extends FormRequest
             'slug' => ['max:200'],
             'description' => ['string', 'max:200', 'min:3'],
             'parent_id' => ['required', 'integer', 'exists:blog_categories,id'],
-            'img' => ['string', 'max:50'],
         ];
     }
 }
