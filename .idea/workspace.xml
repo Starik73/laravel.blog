@@ -6,14 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9803d43a-5186-47a9-859f-bb0e46cdd1dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/BlogCategoryRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Repositories/CoreRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Blog/Admin/PostController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/BlogPostUpdateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/BlogPostyCreateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/BlogPostRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/blog/admin/posts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Blog/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Blog/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BlogCategoryCreateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BlogCategoryCreateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BlogCategoryUpdateRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BlogCategoryUpdateRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog/admin/categories/includes/item_edit_main_col.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/admin/categories/includes/item_edit_main_col.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/blog/admin/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/blog/admin/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +176,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/blog/admin/posts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -190,10 +189,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSp\OSPanel\domains\blog.laravel\resources\views\blog\admin\posts" />
       <recent name="C:\OSp\OSPanel\domains\blog.laravel\app\Repositories" />
       <recent name="C:\OSp\OSPanel\domains\blog.laravel\app\Http\Requests" />
+      <recent name="C:\OSp\OSPanel\domains\blog.laravel\app\Http\Controllers\Blog\Admin" />
       <recent name="C:\OSp\OSPanel\domains\blog.laravel\resources\views\blog\admin\categories\includes" />
-      <recent name="C:\OSp\OSPanel\domains\blog.laravel\resources\views\blog\admin\categories" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OSp\OSPanel\domains\blog.laravel\resources\views\blog\admin\category" />
@@ -218,7 +218,7 @@
       <workItem from="1608233408682" duration="1197000" />
       <workItem from="1608234852818" duration="54550000" />
       <workItem from="1608571860078" duration="9025000" />
-      <workItem from="1608654202795" duration="7534000" />
+      <workItem from="1608654202795" duration="9066000" />
     </task>
     <servers />
   </component>
