@@ -16,7 +16,9 @@
                 <td>'id'</td>
                 <td>'Заголовок'</td>
                 <td>'Опубликован:'</td>
+                <td>'Автор ID:'</td>
                 <td>'Автор:'</td>
+                <td>'Категория ID:'</td>
                 <td>'Категория:'</td>
             </tr>
             </thead>
@@ -28,7 +30,9 @@
                     <td>{{ $post->id }}</td>
                     <td><a href="{{ route('blog.admin.posts.edit', $post->id) }}"> {{ $post->title }} </a></td>
                     <td>{{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->format('d M Y H:i') : '' }}</td>
+                    <td>{{ $post->user->name }}</td>
                     <td>{{ $post->user_id }}</td>
+                    <td>{{ $post->category->title }}</td>
                     <td>{{ $post->category_id }}</td>
                 </tr>
             @endforeach
