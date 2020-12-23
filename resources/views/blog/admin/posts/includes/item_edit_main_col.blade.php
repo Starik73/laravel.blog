@@ -12,7 +12,7 @@
     </div>
     <div class="col-4">
         <div class="form-group">
-            <label for="parent_id">Родитель</label>
+            <label for="parent_id">Категория:</label>
             <select name="parent_id"
                     id="parent_id"
                     class="form-control"
@@ -38,11 +38,25 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="description">Сырое:</label>
-    <textarea name="description"
+    <label for="excerpt">Описание:</label>
+    <textarea name="excerpt"
+              class="form-control"
+              id="excerpt"
+              rows="3">{{ $post->excerpt }}</textarea>
+</div>
+<div class="form-group">
+    <label for="content_raw">Сырой текст:</label>
+    <textarea name="content_raw"
               class="form-control"
               id="description"
-              rows="3">{{ $post->excerpt }}</textarea>
+              rows="3">{{ $post->content_raw }}</textarea>
+</div>
+<div class="form-group">
+    <label for="content_html">HTML текст:</label>
+    <textarea name="content_html"
+              class="form-control"
+              id="description"
+              rows="3">{{ $post->content_html }}</textarea>
 </div>
 <div class="form-group">
     <div class="row">

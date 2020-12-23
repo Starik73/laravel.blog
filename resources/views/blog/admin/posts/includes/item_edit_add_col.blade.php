@@ -4,6 +4,26 @@
 
     </div>
     <div class="form-group">
+        <label for="user_id">Автор</label>
+        <input name="user_id" value="{{ $post->user_id }}"
+               type="text"
+               class="form-control"
+               id="user_id">
+    </div>
+    <div class="form-group">
+        <label for="is_published">Опубликовано:</label>
+        <input name="is_published" @if($post->is_published) checked @endif
+               type="checkbox"
+               id="is_published">
+    </div>
+    <div class="form-group">
+        <label for="published_at">Дата публикации:</label>
+        <input name="published_at" value="{{ $post->published_at }}"
+               type="text"
+               class="form-control"
+               id="published_at">
+    </div>
+    <div class="form-group">
         <label for="created_at">Created At</label>
         <input name="created_at" value="{{ $post->created_at }}"
                type="text"
