@@ -55,7 +55,9 @@
                                 </li>
                             @endif
                         @else
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/blog/posts">Admin Blog Posts</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/admin/blog/categories">Admin Blog Categories</a>
                             </li>

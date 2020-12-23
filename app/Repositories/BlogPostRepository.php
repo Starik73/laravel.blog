@@ -42,13 +42,30 @@ class BlogPostRepository extends CoreRepository
         return $result;
     }
 
-    public function getAllWithPagenate($perPage = null)
+    /**
+     * Возвращает список статей с пагинацией (для вывода в админке)
+     * @return mixed
+     */
+    public function getAllWithPagenate()
     {
-        $columns = ['id', 'title'];
+        $perPage = 25;
+
+        $columns = [
+            'id',
+            'title',
+            'slug',
+            'is_published',
+            'published_at',
+            'user_id',
+            'category_id'
+        ];
+
         $result = $this
             ->startConditions()
             ->select($columns)
+            ->orderBy('id', 'DESC')
             ->paginate($perPage);
+
         return $result;
     }
 
