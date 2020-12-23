@@ -2,32 +2,34 @@
 
 @section('content')
     <div class="container">
-        <div class="card p-2">
-            <h2>Статьи Блога</h2>
+        <div class="card p-2 my-1">
+            <h2 class="px-3">Статьи Блога</h2>
+            <div class="card-body">
+                <a href="{{  route('blog.admin.posts.create') }}" class="btn btn-info">Написать</a>
+            </div>
         </div>
     </div>
     <div class="container">
-        <table class="table table-info table-hover">
-            <thead class="table-warning">
+        <table class="table table-hover">
+            <thead class="table-dark">
             <tr>
                 <td>'id'</td>
-                <td>'title'</td>
-                <td>'slug'</td>
-                <td>'is_published'</td>
-                <td>'published_at'</td>
-                <td>'user_id'</td>
-                <td>'category_id'</td>
+                <td>'Заголовок'</td>
+                <td>'Опубликован:'</td>
+                <td>'Автор:'</td>
+                <td>'Категория:'</td>
             </tr>
             </thead>
-            @foreach($paginator as $item)
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td><a href="#{{ $item->id }}"> {{ $item->title }} </a></td>
-                    <td>{{ $item->slug }}</td>
-                    <td>{{ $item->is_published }}</td>
-                    <td>{{ $item->published_at }}</td>
-                    <td>{{ $item->user_id }}</td>
-                    <td>{{ $item->category_id }}</td>
+            @php
+                /** @var App\Model\BlogPost $post */
+            @endphp
+            @foreach($paginator as $post)
+                <tr @if(!$post->published_at) class="table-info" @endif>
+                    <td>{{ $post->id }}</td>
+                    <td><a href="{{ route('blog.admin.posts.edit', $post->id) }}"> {{ $post->title }} </a></td>
+                    <td>{{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->format('d M Y H:i') : '' }}</td>
+                    <td>{{ $post->user_id }}</td>
+                    <td>{{ $post->category_id }}</td>
                 </tr>
             @endforeach
         </table>

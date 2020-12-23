@@ -11,6 +11,10 @@ class BlogPost extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $dates = [
+        'published_at',
+    ];
+
     protected $fillable = [
         'title',
         'slug',

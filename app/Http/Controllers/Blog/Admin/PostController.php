@@ -99,14 +99,14 @@ class PostController extends BaseController
      */
     public function edit($id)
     {
-        $item = $this->blogPostRepository->getEdit($id);
-        if (empty($item)) {
+        $post = $this->blogPostRepository->getEdit($id);
+        if (empty($post)) {
             abort(404);
         }
 
-        $PostList = $this->blogPostRepository->getForComboBox();
+        $postsList = $this->blogPostRepository->getForComboBox();
 
-        return view('blog.admin.Post.edit', compact('item', 'PostList'));
+        return view('blog.admin.posts.edit', compact('post', 'postsList'));
     }
 
     /**

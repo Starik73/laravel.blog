@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\BlogPost as Model;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 
 class BlogPostRepository extends CoreRepository
@@ -44,7 +45,7 @@ class BlogPostRepository extends CoreRepository
 
     /**
      * Возвращает список статей с пагинацией (для вывода в админке)
-     * @return mixed
+     * @return LengthAwarePaginator
      */
     public function getAllWithPagenate()
     {
