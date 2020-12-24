@@ -47,4 +47,5 @@
 @endif
 <div class="form-group py-2">
     <button type="submit" class="btn btn-danger">Сохранить</button>
+    <a class="btn btn-danger" href = 'delete/{{ $post->id }}'>Delete</a>
 </div>

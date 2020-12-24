@@ -170,6 +170,16 @@ class CategoryController extends BaseController
      */
     public function destroy($id)
     {
-        dd(__METHOD__);
+        $result = $this->blogCategoryRepository->getEdit($id);
+        $result->delete();
+        if ($result){
+            return redirect()
+                ->route('blog.admin.categories.index')
+                ->with(['success' => 'Успешно удалено']);
+        } else {
+            return back()
+                ->withErrors(['msg' => 'Ошибка Удаления'])
+                ->withInput();
+        }
     }
 }
