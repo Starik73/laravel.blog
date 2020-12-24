@@ -28,7 +28,7 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
+//Route::get('home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('rest', RestTestController::class)->names('restTest');
 
