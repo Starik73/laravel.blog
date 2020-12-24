@@ -1,0 +1,98 @@
+.img_news{
+	max-width: 600px;
+	height: auto;
+}
+
+@media (max-width: 500px){
+	.img_news{
+		width: 100%;
+		height: auto;
+	}
+}
+
+.banner__title{
+	text-transform: none;
+}
+.fa{
+	color: #fba549;
+	margin-right: 8px;
+}
+.company-desc__riadi-container:after {
+	background: rgba(47,47,47,.9);
+	transform: rotate(1.11deg) translateZ(-2px);
+}
+
+@media (prefers-color-scheme: dark) {
+	.header{
+		background-color: #5b5b5b;	
+		color: #fff;
+	}
+	.header__riadi-container{
+		background-color: #5b5b5b;		
+		color: #fff;
+	}
+	.footer{
+		background-color: #5b5b5b;		
+		color: #fff;
+	}
+	.footer__riadi-container{
+		background-color: #5b5b5b;		
+		color: #fff;
+	}
+	.header__item__subtitle{
+		background: #5b5b5b;
+		color: #fff;
+	}
+	.header__item__link{
+		background: #5b5b5b;
+		color: #fff;	
+	}
+	.footer__info{
+		background: #5b5b5b;
+		color: #fff;
+	}
+}
+.ligth_tel:hover{
+    color: orange;
+}
+.text-orange {
+	color: #fba549;
+	background-color: #2f2f2f;
+	border: 1px solid dimgray;
+	border-radius: 5px;
+}
+.border-orange {
+	border: 1px solid #fba549;
+	border-radius: 5px;
+}
+.img_thanks{
+	width: 100%;
+	height: 500px;
+}
+@media (max-width: 500px){
+	.img_thanks{
+		width: 100%;
+		height: auto;
+	}
+	.card{
+		width: 300px;
+	}
+}
+.card{
+	width: 400px;
+	padding: 15px;
+	margin: 50px;
+}
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 230%;
+	background: linear-gradient(to bottom, rgba(117, 114, 113, 0.8) 10%, rgba(40, 49, 77, 0.8) 30%, rgba(29, 35, 71, 0.8) 50%, rgba(19, 25, 28, 0.8) 80%, rgba(15, 14, 14, .8) 100%), url(https://38.media.tumblr.com/tumblr_m00c3czJkM1qbukryo1_500.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	z-index: 0;
+	overflow: hidden;
+  }
+  
+  
