@@ -30,6 +30,16 @@ class PostController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
+    public function dashboard()
+    {
+        return view('blog.admin.dashboard');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $paginator = $this->blogPostRepository->getAllWithPagenate();

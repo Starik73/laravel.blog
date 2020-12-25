@@ -255,42 +255,41 @@
                             <!-- /.footer__other__social__link -->
                         </div>
                         <!-- /.footer__other__social__link--wrap -->
+                        <hr>
+                        <div class="container text-left">
+                            @guest
+                                @if (Route::has('login'))
+                                    <a class="badge badge-primary p-1" href="{{ route('login') }}">
+                                        {{ __('Login') }}
+                                    </a>
+                                @endif
+                            @else
+                                <a class="badge badge-primary p-1" href="/admin">
+                                    Админка
+                                </a>
+                                <a class="badge badge-primary p-1" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            @endguest
+                        </div>
                     </div>
                     <!-- /.footer__other__social -->
                 </div>
                 <!-- /.footer__other__top -->
                 <div class="footer__other__copyright">
-
-                    <nav class="navbar navbar-expand-md navbar-dark shadow-sm">
-                        <div class="container">
-                            @guest
-                                <img src="/img/footer__other__copyright__img/agatech.png" alt="AGATECH"
-                                    class="footer__other__copyright__img">
-                                @if (Route::has('login'))
-                                    <a class="footer__other__copyright__text" href="{{ route('login') }}">
-                                        {{ __('Login') }}
-                                    </a>
-                                @endif
-                            @else
-                                <a class="btn" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <a class="footer__other__copyright__text" href="/admin/blog/posts"><img
-                                        src="/img/footer__other__copyright__img/agatech.png" alt="AGATECH"
-                                        class="footer__other__copyright__img"></a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        @endguest
+                    <a href="https://agatech.ru">
+                        <span class="footer__other__copyright__text">Создание сайтов, техническая поддержка</span>
+                        <img src="/img/footer__other__copyright__img/agatech.png" alt="AGATECH"
+                            class="footer__other__copyright__img">
+                    </a>
                 </div>
-                </nav>
+                <!-- /.footer__other__bottom -->
             </div>
-            <!-- /.footer__other__bottom -->
-        </div>
-        <!-- /.footer__other -->
+            <!-- /.footer__other -->
         </div>
         <!-- /.riadi-container footer__riadi-container -->
     </footer>

@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestTestController;
-use App\Http\Controllers\Blog\PostController;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\Blog\PostController;
+// use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,40 +20,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Auth::routes();
 
-//Route::get('home', [HomeController::class, 'index'])->name('home');
+// Route::resource('rest', RestTestController::class)->names('restTest');
 
-Route::resource('rest', RestTestController::class)->names('restTest');
-
-Route::group(['namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], function()
-{
+Route::group(['namespace' => 'App\Http\Controllers\Blog', 'prefix' => 'blog'], function () {
     Route::resource('posts', 'PostController')->names('blog.posts');
 });
+
+//Админка
+Route::get('/admin', 'App\Http\Controllers\Admin\AdminController@dashboard');
 
 //Админка Блога
 $groupData = [
     'namespace' => 'App\Http\Controllers\Blog\Admin',
     'prefix' => 'admin/blog',
-] ;
+];
 
-Route::group($groupData, function()
-{
+Route::group($groupData, function () {
+
     // BlogCategory
-    $methods = ['index','edit', 'store','update', 'create', 'destroy'];
-        Route::resource('categories', 'CategoryController')
-            ->only($methods)
-            ->names('blog.admin.categories');
+    $methods = ['index', 'edit', 'store', 'update', 'create', 'destroy'];
+    Route::resource('categories', 'CategoryController')
+        ->only($methods)
+        ->names('blog.admin.categories');
 
     // BlogPost
     Route::resource('posts', 'PostController')
         ->except('show')
         ->names('blog.admin.posts');
-});
 
+});
