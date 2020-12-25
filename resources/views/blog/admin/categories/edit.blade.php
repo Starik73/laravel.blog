@@ -57,5 +57,10 @@
                 </div>
             </div>
         </form>
+        <form action="{{ route('blog.admin.categories.destroy', $item->id) }}" method="post">
+            @method('DELETE')
+            @csrf
+            <input type="submit" class="btn btn-danger" value="Delete"/>
+        </form>
     </div>
 @endsection

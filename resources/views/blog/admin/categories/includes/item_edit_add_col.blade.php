@@ -27,9 +27,4 @@
 @endif
 <div class="form-group py-2">
     <button type="submit" class="btn btn-info">Сохранить</button>
-    <form action="{{ route('blog.admin.categories.destroy', $item->id) }}" method="post">
-        @method('DELETE')
-        @csrf
-        <input type="submit" class="btn btn-danger" value="Delete"/>
-    </form>
 </div>

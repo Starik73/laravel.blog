@@ -38,9 +38,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="/blog/posts"> Blog Posts</a>
-                        </li>
+                        </li> --}}
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
