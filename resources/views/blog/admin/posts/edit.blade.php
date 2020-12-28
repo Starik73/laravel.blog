@@ -6,6 +6,7 @@
         /** @var \Illuminate\Support\Collection $postsList */
     @endphp
     <div class="container">
+        @include('blog.admin.posts.includes.result_messages')
         <div class="my-2">
             <h2 class="text-dark">Наименование: <span class="text-info">#{{ $post->id }} {{ $post->title }}</span></h2>
         </div>

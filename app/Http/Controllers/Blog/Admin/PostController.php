@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Models\BlogCategory;
 use App\Models\BlogPost;
 use App\Http\Requests\BlogPostUpdateRequest;
 use App\Http\Requests\BlogPostCreateRequest;
+use App\Repositories\BlogCategoryRepository;
 use Illuminate\Support\Str;
 use App\Repositories\BlogPostRepository;
 
@@ -18,11 +20,15 @@ class PostController extends BaseController
     /** @var BlogPostRepository */
     private $blogPostRepository;
 
+    /** @var BlogCategoryRepository */
+    private $blogCategoryRepository;
+
     public function __construct()
     {
         parent::__construct();
 
         $this->blogPostRepository = app(BlogPostRepository::class);
+        $this->blogCategoryRepository = app(BlogCategoryRepository::class);
     }
 
     /**
@@ -115,8 +121,9 @@ class PostController extends BaseController
         }
 
         $postsList = $this->blogPostRepository->getForComboBox();
+        $categoryList = $this->blogCategoryRepository->getForComboBox();
 
-        return view('blog.admin.posts.edit', compact('post', 'postsList'));
+        return view('blog.admin.posts.edit', compact('post', 'postsList', 'categoryList'));
     }
 
     /**
